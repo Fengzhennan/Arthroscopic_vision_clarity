@@ -1,3 +1,5 @@
+<div align="center">
+
 # Deep learning presents better arthroscopic field clarity
 
 <div align="center">
