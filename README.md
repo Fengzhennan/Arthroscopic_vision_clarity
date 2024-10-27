@@ -32,7 +32,7 @@
 ### Homorrhage and Clear Dataset Preparation
 ### Train Hemorrhage Generator
 ### Stage 1 training
-### Synthesis Data(Arthroscopic Degradation)
+### Synthesis Data (Arthroscopic Degradation)
 ### Stage 2&3 training
 <!----------------------------------  Usage  ---------------------------->
 ## ⚡ Usage
