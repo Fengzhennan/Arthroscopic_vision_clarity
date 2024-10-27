@@ -61,3 +61,7 @@ Results are in the `results` folder
 <!---------------------------------- Contact ---------------------------->
 ## 📧 Contact
 Any question refer to email `fengzhennan@hotmail.com`.
+
+<!------------------------------ Acknowledgement ------------------------>
+## ❤️‍🩹 Acknowledgement
+We extend our gratitude to all the orthopedic surgeons from the Department of Joint Surgery and Sports Medicine at the Third Xiangya Hospital of Central South University for their evaluation of our model. Specifically, we thank the [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) project for its open-source spirit and for inspiring this research.
