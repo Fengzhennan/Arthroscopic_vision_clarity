@@ -19,7 +19,13 @@
     cd Deep_learning_presents_better_arthroscopic_vision_clarity
     ```
 2. Install dependent packages
-
+    ```bash
+    pip install -r requirements.txt
+    
+    # Install basicsr - https://github.com/xinntao/BasicSR
+    # We use BasicSR for both training and inference
+    pip install basicsr
+    ```
 
 <!----------------------------------  Train  ---------------------------->
 ## 💻 Train
