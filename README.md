@@ -6,8 +6,7 @@
     
 📑[**Abstract**](#-abstract) **|** 🔧[**Install**](#-dependencies-and-installation)  **|** 💻[**Train**](#-train) **|** ⚡[**Usage**](#-inference)  **|** 👀[**Demos**](#-demo-videos) **|** 📧[**Contact**](#-contact)
 
-</div>
-
+<div align="left">
 
 <!---------------------------------- Abstract --------------------------->
 ## 📑 Abstract
