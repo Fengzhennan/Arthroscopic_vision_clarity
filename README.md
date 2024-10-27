@@ -1,1 +1,1 @@
-# Deep_learning_presents_better_arthroscopic_vision_clarity
+# Deep learning presents better arthroscopic field clarity
