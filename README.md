@@ -5,7 +5,9 @@
 📑[**Abstract**](#-abstract) **|** 🔧[**Install**](#-dependencies-and-installation)  **|** 💻[**Train**](#-train) **|** ⚡[**Usage**](#-inference)  **|** 👀[**Demos**](#-demo-videos)
 
 </div>
+
 ---
+
 <!---------------------------------- Abstract --------------------------->
 ## 📑 Abstract
 
