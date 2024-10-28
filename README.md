@@ -39,13 +39,17 @@ The training has been divided into three stages. These two stages have the same 
 #### Step 1: [Optional] Generate multi-scale images
 We placed the clear image dataset, i.e., the Ground-Truth images, in `superresolution/datasets/DF2K/DF2K_HR`.
 ```bash
-python superresolution/scripts/generate_multiscale_DF2K.py --input datasets/DF2K/DF2K_HR --output datasets/DF2K/DF2K_multiscale
+python superresolution/scripts/generate_multiscale_DF2K.py --input superresolution/datasets/DF2K/DF2K_HR --output superresolution/datasets/DF2K/DF2K_multiscale
 ```
 #### Step 2: Prepare a txt for meta information
 You can use the [superresolution/scripts/generate_meta_info.py](superresolution/scripts/generate_meta_info.py) script to generate the txt file. <br>
 You can merge several folders into one meta_info txt. Here is the example:
 ```bash
- python scripts/generate_meta_info.py --input datasets/DF2K/DF2K_HR datasets/DF2K/DF2K_multiscale --root datasets/DF2K datasets/DF2K --meta_info datasets/DF2K/meta_info/meta_info_DF2Kmultiscale.txt
+ python superresolution/scripts/generate_meta_info.py --input superresolution/datasets/DF2K/DF2K_HR superresolution/datasets/DF2K/DF2K_multiscale --root superresolution/datasets/DF2K datasets/DF2K --meta_info superresolution/datasets/DF2K/meta_info/meta_info_DF2Kmultiscale.txt
+```
+#### Step 3: Generation of degraded arthroscopic images
+```bash
+ python superresolution/scripts/datasets/DF2K/test.py
 ```
 
 ### Train Hemorrhage Generator
