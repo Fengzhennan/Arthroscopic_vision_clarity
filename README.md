@@ -41,15 +41,19 @@ We placed the clear image dataset, i.e., the Ground-Truth images, in `superresol
 ```bash
 python superresolution/scripts/generate_multiscale_DF2K.py --input superresolution/datasets/DF2K/DF2K_HR --output superresolution/datasets/DF2K/DF2K_multiscale
 ```
-#### Step 2: Prepare a txt for meta information
+#### Step 2: Prepare a txt for meta information in 1st&2nd stages
 You can use the [superresolution/scripts/generate_meta_info.py](superresolution/scripts/generate_meta_info.py) script to generate the txt file. <br>
 You can merge several folders into one meta_info txt. Here is the example:
 ```bash
- python superresolution/scripts/generate_meta_info.py --input superresolution/datasets/DF2K/DF2K_HR superresolution/datasets/DF2K/DF2K_multiscale --root superresolution/datasets/DF2K datasets/DF2K --meta_info superresolution/datasets/DF2K/meta_info/meta_info_DF2Kmultiscale.txt
+python superresolution/scripts/generate_meta_info.py --input superresolution/datasets/DF2K/DF2K_HR superresolution/datasets/DF2K/DF2K_multiscale --root superresolution/datasets/DF2K datasets/DF2K --meta_info superresolution/datasets/DF2K/meta_info/meta_info_DF2Kmultiscale.txt
 ```
 #### Step 3: Generation of degraded arthroscopic images
 ```bash
- python superresolution/scripts/datasets/DF2K/test.py
+python superresolution/scripts/datasets/DF2K/test.py
+```
+#### Step 4: Prepare a txt for meta information in 3rd stages
+```bash
+python superresolution/scripts/generate_meta_info_pairdata.py --input superresolution/datasets/DF2K/DIV2K_train_HR_sub superresolution/datasets/DF2K/DIV2K_train_LR_bicubic_X4_sub --meta_info superresolution/datasets/DF2K/meta_info/meta_info_DIV2K_sub_pair.txt
 ```
 
 ### Train Hemorrhage Generator
