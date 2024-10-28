@@ -47,14 +47,6 @@ You can merge several folders into one meta_info txt. Here is the example:
 ```bash
 python superresolution/scripts/generate_meta_info.py --input superresolution/datasets/DF2K/DF2K_HR superresolution/datasets/DF2K/DF2K_multiscale --root superresolution/datasets/DF2K datasets/DF2K --meta_info superresolution/datasets/DF2K/meta_info/meta_info_DF2Kmultiscale.txt
 ```
-#### Step 3: Generation of degraded arthroscopic images
-```bash
-python superresolution/scripts/datasets/DF2K/test.py
-```
-#### Step 4: Prepare a txt for meta information in 3rd stages
-```bash
-python superresolution/scripts/generate_meta_info_pairdata.py --input superresolution/datasets/DF2K/DIV2K_train_HR_sub superresolution/datasets/DF2K/DIV2K_train_LR_bicubic_X4_sub --meta_info superresolution/datasets/DF2K/meta_info/meta_info_DIV2K_sub_pair.txt
-```
 
 ### Train Hemorrhage Generator
 Run the following script to monitor the generator quality in real time. Place the trained and satisfactory `hemorrhage_generator.pth` in `superresolution/datasets/DF2K`.
@@ -62,9 +54,18 @@ Run the following script to monitor the generator quality in real time. Place th
 python hemorrhage/run.py
 ```
 
+### Synthesis Data (Arthroscopic Degradation)
+#### Step 1: Generation of degraded arthroscopic images
+```bash
+python superresolution/scripts/datasets/DF2K/test.py
+```
+#### Step 2: Prepare a txt for meta information in 3rd stages
+```bash
+python superresolution/scripts/generate_meta_info_pairdata.py --input superresolution/datasets/DF2K/DIV2K_train_HR_sub superresolution/datasets/DF2K/DIV2K_train_LR_bicubic_X4_sub --meta_info superresolution/datasets/DF2K/meta_info/meta_info_DIV2K_sub_pair.txt
+```
+
 ### Stage 1 training
 We initiated the first stage of training using a pre-trained ESRGAN model on a publicly available dataset.
-### Synthesis Data (Arthroscopic Degradation)
 ### Stage 2&3 training
 <!----------------------------------  Usage  ---------------------------->
 ## ⚡ Usage
