@@ -29,9 +29,28 @@
 <!----------------------------------  Train  ---------------------------->
 ## 💻 Train
 ### Overview
+The training has been divided into three stages. These two stages have the same data synthesis process and training pipeline, except for the loss functions. Specifically,
+
+1. We first train Real-ESRNet from the pre-trained ESRGAN model, using the L1 loss function with a combination of the clear image dataset and high-order degradation model.
+2. Next, we use the trained Real-ESRNet model to initialize the generator, training Real-ESRGAN with a combination of L1 loss, perceptual loss, and GAN loss, again using the clear image dataset combined with the high-order degradation model.
+3. Finally, we apply the model, which has demonstrated generalizability and robustness in arthroscopic fields, to the clear image dataset combined with the arthroscopic degradation model.
+
 ### Homorrhage and Clear Dataset Preparation
+#### Step 1: [Optional] Generate multi-scale images
+We placed the clear image dataset, i.e., the Ground-Truth images, in `superresolution/datasets/DF2K/DF2K_HR`.
+```bash
+python superresolution/scripts/generate_multiscale_DF2K.py --input datasets/DF2K/DF2K_HR --output datasets/DF2K/DF2K_multiscale
+```
+#### Step 2: Prepare a txt for meta information
+You can use the [superresolution/scripts/generate_meta_info.py](superresolution/scripts/generate_meta_info.py) script to generate the txt file. <br>
+You can merge several folders into one meta_info txt. Here is the example:
+```bash
+ python scripts/generate_meta_info.py --input datasets/DF2K/DF2K_HR datasets/DF2K/DF2K_multiscale --root datasets/DF2K datasets/DF2K --meta_info datasets/DF2K/meta_info/meta_info_DF2Kmultiscale.txt
+```
+
 ### Train Hemorrhage Generator
 ### Stage 1 training
+We initiated the first stage of training using a pre-trained ESRGAN model on a publicly available dataset.
 ### Synthesis Data (Arthroscopic Degradation)
 ### Stage 2&3 training
 <!----------------------------------  Usage  ---------------------------->
