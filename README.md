@@ -57,6 +57,11 @@ python superresolution/scripts/generate_meta_info_pairdata.py --input superresol
 ```
 
 ### Train Hemorrhage Generator
+Run the following script to monitor the generator quality in real time. Place the trained and satisfactory `hemorrhage_generator.pth` in `superresolution/datasets/DF2K`.
+```bash
+python hemorrhage/run.py
+```
+
 ### Stage 1 training
 We initiated the first stage of training using a pre-trained ESRGAN model on a publicly available dataset.
 ### Synthesis Data (Arthroscopic Degradation)
