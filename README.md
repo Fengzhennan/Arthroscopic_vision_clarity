@@ -64,9 +64,24 @@ python superresolution/scripts/datasets/DF2K/test.py
 python superresolution/scripts/generate_meta_info_pairdata.py --input superresolution/datasets/DF2K/DIV2K_train_HR_sub superresolution/datasets/DF2K/DIV2K_train_LR_bicubic_X4_sub --meta_info superresolution/datasets/DF2K/meta_info/meta_info_DIV2K_sub_pair.txt
 ```
 
-### Stage 1 training
-We initiated the first stage of training using a pre-trained ESRGAN model on a publicly available dataset.
-### Stage 2&3 training
+### Superresolution and restoration model training
+Ensure that the dataset is placed in the correct location and use the specified parameters in the code to start training in the terminal.
+#### step 1
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+python torchrun --nproc_per_node=4 --master_port=4321 superresolution/realesrgan/train.py -opt superresolution/options/train_realesrnet_x4plus.yml --launcher pytorch --auto_resume
+```
+#### step 2
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+python torchrun --nproc_per_node=4 --master_port=4321 superresolution/realesrgan/train.py -opt superresolution/options/train_realesrgan_x4plus.yml --launcher pytorch --auto_resume
+```
+#### step 3
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+python torchrun --nproc_per_node=4 --master_port=4321 superresolution/realesrgan/train.py -opt superresolution/options/finetune_realesrgan_x4plus_pairdata.yml --launcher pytorch --auto_resume
+```
+
 <!----------------------------------  Usage  ---------------------------->
 ## ⚡ Usage
 ### Usage of Python script
