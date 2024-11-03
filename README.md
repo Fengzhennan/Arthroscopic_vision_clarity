@@ -29,7 +29,7 @@
 <!----------------------------------  Train  ---------------------------->
 ## 💻 Train
 ### Overview
-The training has been divided into three stages. These two stages have the same data synthesis process and training pipeline, except for the loss functions. We also recommend using the official 4-GPU training setup. Specifically,
+The training has been divided into three stages. The 2nd and 3rd stages have different data synthesis process and same training pipeline, except for the loss functions. We highly recommend using the official 4-GPU training setup. Specifically,
 
 1. We first train Real-ESRNet from the pre-trained ESRGAN model, using the L1 loss function with a combination of the clear image dataset and high-order degradation model.
 2. Next, we use the trained Real-ESRNet model to initialize the generator, training Real-ESRGAN with a combination of L1 loss, perceptual loss, and GAN loss, again using the clear image dataset combined with the high-order degradation model.
